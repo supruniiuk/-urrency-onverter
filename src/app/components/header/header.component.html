@@ -1,6 +1,11 @@
-<header class="bg-darkBlue">
+<header class="bg-darkBlue" *ngIf="EUR && USD">
+  <h2>Currency Converter</h2>
   <section class="currency">
-    <div>USD | 34.068 | 34.942</div>
-    <div>EUR | 35.913 | 37.197</div>
+    <div>
+      <strong>USD</strong> | {{ USD.UAH.rate }} | {{ USD.UAH.rate_for_amount }}
+    </div>
+    <div>
+      <strong>EUR</strong> | {{ EUR.UAH.rate }} | {{ EUR.UAH.rate_for_amount }}
+    </div>
   </section>
 </header>
