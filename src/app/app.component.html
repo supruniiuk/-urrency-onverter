@@ -1,4 +1,4 @@
-<div *ngIf="(currencies$ | async)?.UAH; else loader">
+<div *ngIf="(EUR$ | async); else loader">
   <app-header [EUR]="EUR$ | async" [USD]="USD$ | async"></app-header>
 
   <main>
