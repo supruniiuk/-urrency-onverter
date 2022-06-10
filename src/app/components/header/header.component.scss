@@ -1,0 +1,14 @@
+header {
+  height: 7vh;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  padding-right: 4em; 
+}
+
+.currency {
+  display: flex;
+  gap: 20px;
+}
