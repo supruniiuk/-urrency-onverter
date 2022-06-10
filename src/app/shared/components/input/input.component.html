@@ -1,8 +1,16 @@
-<div class="moneyInput">
-  <input value="100.00" class="border bg-paleBlue color-dark" />
-  <select class="border bg-paleBlue color-dark">
+<form class="moneyInput" [formGroup]="amount">
+  <input
+    class="border bg-paleBlue color-dark"
+    formControlName="amount"
+    (input)="convert()"
+  />
+  <select
+    class="border bg-paleBlue color-dark"
+    formControlName="currency"
+    (change)="convert()"
+  >
     <option value="UAH">UAH</option>
     <option value="USD">USD</option>
     <option value="EUR">EUR</option>
   </select>
-</div>
+</form>

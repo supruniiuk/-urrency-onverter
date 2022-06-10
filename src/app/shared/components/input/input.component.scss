@@ -2,27 +2,38 @@
 
 .moneyInput {
   height: 100%;
-  width: 100%;
 
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 10px;
+  font-size: 1.2em;
 }
 
 input,
 select {
   display: inline-block;
   height: 40%;
-  font-size: 1.2em;
   border: none;
+
+  font-size: 1.1em;
 }
 
 input {
   padding: 0 15px;
+  width: 37%;
 }
 
 input:focus,
 select:focus {
   outline: none;
   box-shadow: 0px 0px 15px 0px variables.$veryDarkBlue;
+}
+
+@media screen and (max-width: 1024px) {
+  input,
+  select {
+    height: 100%;
+    width: 95%;
+  }
 }
