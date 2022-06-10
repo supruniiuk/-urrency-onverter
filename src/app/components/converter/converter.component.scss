@@ -1,0 +1,30 @@
+@use "../../../styles/variables.scss" as variables;
+
+.converter {
+    height: 15vh;
+    width: 60%;
+    z-index: 1;
+    padding: 0 50px;
+
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.exchangeIcon {
+    display: block;
+    height: 30%;
+    align-self: center;
+    color: variables.$paleBlue;
+
+    cursor: pointer;
+    transition: all .2s ease-out;
+}
+
+.exchangeIcon:hover {
+    transform: scale(1.1);
+}
+
+.exchangeIcon:active {
+    transform: scale(0.9);
+}
