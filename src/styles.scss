@@ -1,9 +1,12 @@
 @use "./styles/variables.scss" as variables;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap");
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  font-family: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -12,18 +15,17 @@ body {
   color: variables.$paleBlue;
 }
 
-body::after {
-  content: "";
-  height: 50%;
-  width: 100%;
 
-  background: url(./assets/bg-desktop.png);
-  background-size: 100%;
-  background-repeat: no-repeat;
+footer{
+    position: absolute;
+    bottom: -10vh;
+    right: 0;
+    width: 100%;
+}
 
-  position: absolute;
-  bottom: 0;
-  right: 0;
+footer img {
+    width: 100%;
+    height: 50%;
 }
 
 .bg-darkBlue {
@@ -31,11 +33,11 @@ body::after {
 }
 
 .bg-graishBlue {
-    background-color: variables.$graishBlue;
+  background-color: variables.$graishBlue;
 }
 
 .bg-paleBlue {
-    background-color: variables.$paleBlue;
+  background-color: variables.$paleBlue;
 }
 
 .center {
@@ -53,12 +55,10 @@ body::after {
   box-shadow: 0px 5px 15px 5px variables.$veryDarkBlue;
 }
 
-
 .color-dark {
-    color: variables.$veryDarkBlue;
+  color: variables.$veryDarkBlue;
 }
 
 .flex {
-    display: flex;
-    
+  display: flex;
 }
