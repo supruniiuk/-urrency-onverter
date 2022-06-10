@@ -9,7 +9,7 @@ import { RequestService } from './requests.service';
 export class CurrencyService {
   constructor(private requestService: RequestService) {}
 
-  getAllGames(): Observable<Currency> {
-    return this.requestService.get<Currency>(`&from=EUR`);
+  getAll(currency: string): Observable<Currency> {
+    return this.requestService.get<Currency>(`&from=${currency}`);
   }
 }

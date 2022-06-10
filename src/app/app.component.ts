@@ -1,19 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { CurrencyService } from './shared/services/currency.service';
+import { Store } from '@ngrx/store';
+import { RateService } from './shared/services/loadRatesService';
+import { AppState } from './state/app.state';
+import { selectAll, selectEUR, selectUAH, selectUSD } from './state/selectors';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'currency-converter';
+  USD$ = this.store.select(selectUSD);
+  EUR$ = this.store.select(selectEUR);
+  UAH$ = this.store.select(selectUAH);
+  currencies$ = this.store.select(selectAll);
 
-  constructor(private currencyService: CurrencyService){}
+  constructor(
+    private store: Store<AppState>,
+    private rateService: RateService
+  ) {}
 
   ngOnInit() {
-    this.currencyService.getAllGames().subscribe(res => {
-      console.log(res.rates)
-    })
+    this.rateService.loadAllCurrencies();
   }
 }

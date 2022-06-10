@@ -1,5 +1,16 @@
-<app-header></app-header>
+<div *ngIf="(currencies$ | async)?.UAH; else loader">
+  <app-header [EUR]="EUR$ | async" [USD]="USD$ | async"></app-header>
 
-<main>
-    <app-converter></app-converter>
-</main>
+  <main>
+    <app-converter
+      *ngIf="currencies$ | async"
+      [state]="currencies$ | async"
+    ></app-converter>
+  </main>
+
+  <footer>
+    <img src="../assets/bg-desktop.png">
+  </footer>
+</div>
+
+<ng-template #loader><app-loader></app-loader></ng-template>

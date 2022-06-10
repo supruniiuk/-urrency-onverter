@@ -1,5 +1,5 @@
 export interface Rate {
-  currency: RateAmount;
+  [name: string]: RateAmount;
 }
 
 export interface RateAmount {
