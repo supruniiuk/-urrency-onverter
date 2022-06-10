@@ -1,5 +1,11 @@
-<section class="bg-darkBlue converter center border shadow">
-  <app-input></app-input>
-  <a class="exchangeIcon" [innerHtml]="exchangeIcon"> </a>
-  <app-input></app-input>
+<section class="bg-darkBlue converter center border shadow" *ngIf="state?.UAH">
+  <app-input
+    (currency)="setFrom($event)"
+    [value]="from"
+  ></app-input>
+  <a class="exchangeIcon" [innerHtml]="exchangeIcon" (click)="switch()"> </a>
+  <app-input
+    (currency)="setTo($event)"
+    [value]="to"
+  ></app-input>
 </section>
